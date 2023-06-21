@@ -9,3 +9,27 @@ baseurl: "/handbook"
 
 aux_links:
   GitHub Repository: https://github.com/UCLA-CS-131/handbook
+
+nav_external_links:
+  - title: GitHub Organization
+    url: https://github.com/UCLA-CS-131/spring-23
+  - title: Barista
+    url: https://barista.fly.dev
+
+permalink: pretty
+
+# callouts
+callouts_level: quiet # or loud
+callouts:
+  important:
+    title: Important
+    color: yellow
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: red
