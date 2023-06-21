@@ -3,30 +3,30 @@ title: Home
 layout: home
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+This is a TA handbook for UCLA COM SCI 131. The idea is that a new TA could read this website and know how to run the infrastructure for the class.
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+For [Carey Nachenberg](http://careynachenberg.weebly.com/)'s offering of the class, it details:
 
-More specifically, the created site:
+- a set of playbooks for what to do when:
+  - the quarter starts
+  - a new project is created (Gradescope, barista, ...)
+  - a new project is completed (i.e. needs to be graded, solutions published)
+  - a resource needs to be updated on the course site (homework, project spec, lecture slides, exams, schedule)
+- a comprehensive overview of various course infrastructure systems:
+  - the autograder (and Gradescope)
+  - the course website
+  - barista
+  - advanced topics & wish lists for the above
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+In addition, it links to past resources developed by the TAs.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+## Licensing and Attribution
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+This repository's code is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license.
 
-To get started with creating a site, just click "[use this template]"!
+This repository's content is licensed under the [CC-BY SA 4.0 License]. This provides restrictions on reuse -- in particular, you must attribute the content and provide transformations under the same license as the original.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+The initial bootstrap for this repository was written by [Matthew Wang](https://matthewwang.me/), who authored the course infrastructure and TA'd it the first two quarters it was offered (Fall '22, Spring '23).
 
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+[MIT License]: https://en.wikipedia.org/wiki/MIT_License
+[CC-BY SA 4.0 License]: https://creativecommons.org/licenses/by-sa/4.0/
