@@ -9,6 +9,6 @@ nav_order: 6
 
 A checklist of things to do as you wrap up the quarter!
 
-{: .note }
+{: .important }
 
-Do the [Getting Started]({{site.baseurl}}/getting-started/) first!
+This playbook assumes you've already completed the [Getting Started]({{site.baseurl}}/getting-started/) guide.

@@ -9,9 +9,9 @@ nav_order: 1
 
 This playbook runs through everything you need to do to set up the course infrastructure at the start of the quarter.
 
-{: .note }
+{: .important }
 
-Do the [Getting Started]({{site.baseurl}}/getting-started/) first!
+This playbook assumes you've already completed the [Getting Started]({{site.baseurl}}/getting-started/) guide.
 
 {: .no_toc }
 

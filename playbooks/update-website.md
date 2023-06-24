@@ -9,6 +9,6 @@ nav_order: 5
 
 A quick set of sections on how to update various areas of the course website!
 
-{: .note }
+{: .important }
 
-Do the [Getting Started]({{site.baseurl}}/getting-started/) first!
+This playbook assumes you've already completed the [Getting Started]({{site.baseurl}}/getting-started/) guide.

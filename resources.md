@@ -6,7 +6,7 @@ nav_order: 4
 
 # TA Resources
 
-A list of resources gearted towards TAs and teaching, either developed or curated by past TAs.
+A list of resources geared towards TAs and teaching, either developed or curated by past TAs.
 
 {: .no_toc }
 

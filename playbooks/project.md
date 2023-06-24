@@ -9,6 +9,6 @@ nav_order: 2
 
 This playbook runs through everything you need to do to manage a project, from setup to sending out grades.
 
-{: .note }
+{: .important }
 
-Do the [Getting Started]({{site.baseurl}}/getting-started/) first!
+This playbook assumes you've already completed the [Getting Started]({{site.baseurl}}/getting-started/) guide.

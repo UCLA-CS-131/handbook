@@ -32,7 +32,7 @@ This repository's code is licensed under the [MIT License]. You are generally fr
 
 This repository's content is licensed under the [CC-BY SA 4.0 License]. This provides restrictions on reuse -- in particular, you must attribute the content and provide transformations under the same license as the original.
 
-The initial bootstrap for this repository was written by [Matthew Wang](https://matthewwang.me/), who authored the course infrastructure and TA'd it the first two quarters it was offered (Fall '22, Spring '23).
+The initial bootstrap for this repository was written by [Matthew Wang](https://matthewwang.me/), who authored the course infrastructure and TA'd it the first two quarters it was offered by Carey (Fall '22, Spring '23).
 
 [MIT License]: https://en.wikipedia.org/wiki/MIT_License
 [CC-BY SA 4.0 License]: https://creativecommons.org/licenses/by-sa/4.0/

@@ -1,7 +1,7 @@
 ---
 title: Getting Started & Setup
 layout: default
-nav_order: 1
+nav_order: 2
 ---
 
 # Getting Started & Setup
@@ -20,7 +20,7 @@ Are you a new (or returning) TA? Start here!
 
 ## Required (and not required) knowledge
 
-First, **please read the [Why]({{site.baseurl}}/#why) and [Infrastructure Overview]({{site.baseurl}}/infrastructure-overview)** sections of the homepage.
+First, **please read the [Why]({{site.baseurl}}/#why) and [Infrastructure Overview]({{site.baseurl}}/infra-overview)** pages.
 
 The rest of this guide assumes that you know:
 
@@ -46,6 +46,15 @@ There are some things the guide *won't* explain because they're not necessary to
 - how to use [React](https://react.dev/) and [Flask](https://flask.palletsprojects.com/), which power barista's frontend and backend respectively
 
 ## Setup: Course Website
+
+### Prerequisite: Installing Ruby
+
+{: .warning }
+
+You may already have a system Ruby installed. If it is out of date, **you still need to do this section**; at minimum, you need to be on Ruby 3.
+
+In this section, we'll install the [Ruby](https://www.ruby-lang.org/en/) programming language, and verify that it (and Bundler, its package manager) is properly installed.
+
 
 ## Setup: Autograder
 
