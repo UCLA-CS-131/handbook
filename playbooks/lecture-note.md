@@ -324,4 +324,4 @@ You may want to do even more! Since the website is served as HTML, CSS, and JS, 
 
 None of these require extraordinarily-special effort or knowledge; they mostly work with Jekyll as you'd expect.
 
-You may also want to extend upon the compile-time capability of Jekyll, which can be done by writing a plugin (using Ruby). Since this requires non-trivial Ruby knowledge, it's probably out of scope of the TAs; but, it'd be awesome if you gave this a shot! If you do, make sure to document it so that other TAs can maintain your work.
+You may also want to extend upon the compile-time capability of Jekyll, which can be done by [writing a plugin](https://jekyllrb.com/docs/plugins/) (using Ruby). Since this requires non-trivial Ruby knowledge, it's probably out of scope of the TAs; but, it'd be awesome if you gave this a shot! If you do, make sure to document it so that other TAs can maintain your work.
