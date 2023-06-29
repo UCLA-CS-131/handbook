@@ -22,10 +22,6 @@ This is a TA handbook for UCLA COM SCI 131. The idea is that a new TA could read
 
 ...
 
-## Infrastructure Overview
-
-...
-
 ## Licensing and Attribution
 
 This repository's code is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license.

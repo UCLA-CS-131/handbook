@@ -53,7 +53,66 @@ There are some things the guide *won't* explain because they're not necessary to
 
 You may already have a system Ruby installed. If it is out of date, **you still need to do this section**; at minimum, you need to be on Ruby 3.
 
-In this section, we'll install the [Ruby](https://www.ruby-lang.org/en/) programming language, and verify that it (and Bundler, its package manager) is properly installed.
+In this section, we'll install the [Ruby](https://www.ruby-lang.org/en/) programming language, and verify that it (and [Bundler](https://bundler.io/), its package manager) is properly installed.
+
+To install Ruby, we highly recommend using a version manager. The most popular ones are [rbenv](https://github.com/rbenv/rbenv) and [rvm](https://rvm.io/), which work on macOS/Linux/WSL. On stock Windows, [RubyInstaller](https://rubyinstaller.org/) is the de facto best choice.
+
+Once you've properly set up your version manager, you should install a recent version of Ruby. In almost all cases, the latest stable version should suffice; note that you *must* install Ruby `>= 3`.
+
+You can verify that your installation succeeds with the `-v` command:
+
+```sh
+$ ruby -v
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [arm64-darwin21]
+```
+
+Ruby's default package manager is called Bundler. If you installed Ruby using the above method, it should be linked into your PATH by default:
+
+```sh
+$ bundler -v
+Bundler version 2.3.26
+```
+
+If it isn't, try reinstalling Ruby.
+
+### Clone and Install
+
+First, let's clone the repository. Replace the URL with the relevant course website repo:
+
+```sh
+$ git clone git@github.com:UCLA-CS-131/spring-23.git
+```
+
+Every time you clone the repository, you'll need to install all the Ruby dependencies with Bundler:
+
+```sh
+$ cd spring-23
+$ bundle
+```
+
+If this fails, one of two things likely happened:
+
+- your Ruby installation is broken; reinstall Ruby with the above steps
+- there's an issue with your *platform* (typically on Windows and non-standard Linux distros)
+
+### Serving
+
+Once you have a local copy of the website, running a local copy is pretty simple; ex, for this website itself:
+
+```sh
+$ bundle exec jekyll serve
+Configuration file: /Users/matt/code/handbook/_config.yml
+            Source: /Users/matt/code/handbook
+       Destination: /Users/matt/code/handbook/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 0.479 seconds.
+ Auto-regeneration: enabled for '/Users/matt/code/handbook'
+    Server address: http://127.0.0.1:4000/handbook/
+  Server running... press ctrl-c to stop.
+```
+
+You can now visit a copy of the website at [http://127.0.0.1:4000/handbook/]. By default, Jekyll comes with auto-regeneration; after editing any files in the site, Jekyll will rebuild your site. To view your changes, all you'll need to do is refresh the page!
 
 
 ## Setup: Autograder
