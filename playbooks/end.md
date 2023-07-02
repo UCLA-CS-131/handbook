@@ -11,7 +11,7 @@ A checklist of things to do as you wrap up the quarter!
 
 {: .important }
 
-This playbook assumes you've already completed the [Getting Started]({{site.baseurl}}/getting-started/) guide.
+This playbook assumes you've already completed the [Getting Started]({% link getting-started.md %}) guide.
 
 {: .no_toc }
 

@@ -20,7 +20,7 @@ Are you a new (or returning) TA? Start here!
 
 ## Required (and not required) knowledge
 
-First, **please read the [Why]({{site.baseurl}}/#why) and [Infrastructure Overview]({{site.baseurl}}/infra-overview)** pages.
+First, **please read the [Why]({% link index.md %}#why) and [Infrastructure Overview]({% link infra-overview.md %})** pages.
 
 The rest of this guide assumes that you know:
 

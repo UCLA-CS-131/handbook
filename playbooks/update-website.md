@@ -11,7 +11,7 @@ A quick set of sections on how to update various areas of the course website! Mo
 
 {: .important }
 
-This playbook assumes you've already completed the [Getting Started]({{site.baseurl}}/getting-started/) guide.
+This playbook assumes you've already completed the [Getting Started]({% link getting-started.md %}) guide.
 
 {: .no_toc }
 
@@ -30,7 +30,7 @@ Updating the syllabus is relatively simple; navigate to `syllabus.md`, and edit 
 The course calendar page is generated from the `_modules` folder (in Jekyll, this is a special type of folder called a [collection](https://jekyllrb.com/docs/collections/)). As a TA you should only have to edit, add, or delete lines; without going into details, the simplest advice we can give you is to "mess around" and see what works.
 
 ```md
----
+{% raw %}---
 title: Logical Programming
 ---
 
@@ -47,6 +47,7 @@ F Jun 9
   : [Discussion Resources](https://drive.google.com/drive/folders/1TBOqhuq2-JFEcW0KNkbnC6UXtpGUsATe)
 : **Due**{: .label .label-red }HW 9
   : [Solutions](https://drive.google.com/file/d/16f648EtHlRrA-2ORX2ZBmMO1jPw9huhj/view?usp=sharing)
+{% endraw %}
 ```
 
 Observe the use of the `.label` class (and different colors) to differentiate line items.
@@ -61,6 +62,24 @@ There are a few things to keep in mind with the weekly schedule:
 
 - it doesn't handle having many events overlapping (either partially or completely); see [#29 in the Just the Class repo](https://github.com/kevinlin1/just-the-class/issues/29) for more information
 - the colours for items in the schedule are based on the slug of the `name` of the event. If you want the colour to be something that's not gray, you should add a custom class. See `_sass/custom/schedule.scss` for examples.
+
+```scss
+.schedule {
+  // ...
+  .schedule-event {
+    //...
+
+    // this converts events with the title "Section", "Section 1A"
+    // and "Section 1B" to purple
+    &.section,
+    &.section-1a,
+    &.section-1b
+    {
+      background-color: $purple-000;
+    }
+  }
+}
+```
 
 ## Staff Page
 
@@ -81,11 +100,13 @@ photo: matt.jpg
 Any content placed in the *body* of the Markdown file will be rendered in the line under the TA's name + role.
 
 
-## New Sidebar Links
+## New Sidebar and Navbar Links
 
 Links to *internal* pages in the sidebar should generally be automatic (i.e., any page you make with `layout: default` or a layout that inherits it will automatically render within the sidebar). You can edit the order of the links in the sidebar using the `nav_order` front matter variable, which takes in a number; the sidebar is sorted in ascending order.
 
 Links to *external* pages in the sidebar are configured in `_config.yml`. To add a new page, add a new entry to the `nav_external_links` key with a `url` and `title`. **For changes to be reflected, you need to restart your dev server --- i.e. re-run `bundle exec jekyll serve`**.
+
+Links to pages in the navbar (to the right of the search bar) are configured similarly, in the `aux_links` configuration option.
 
 ## Other Elements
 

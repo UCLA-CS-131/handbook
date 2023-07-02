@@ -15,7 +15,7 @@ A one-stop shop that explains all the infrastructure for the course.
 {::options toc_levels="2..4" /}
 
 {: .note }
-Interested in the *why* of our infrastructure? Take a look at the [Philosophy]({{site.baseurl}}/advanced/philosophy)!
+Interested in the *why* of our infrastructure? Take a look at the [Philosophy]({% link advanced/philosophy.md %})!
 
 ## Course Website
 
@@ -37,7 +37,7 @@ The site is automatically updated through [GitHub Actions](https://github.com/fe
 ## Barista
 
 {: .note }
-Want to learn more about Barista? See the [Deep Dive: Barista]({{site.baseurl}}/advanced/barista/) page.
+Want to learn more about Barista? See the [Deep Dive: Barista]({% link advanced/barista.md %}) page.
 
 Barista is a newer addition to our course offering. In a nutshell, it is a simple online runtime for Brewin, the language that students implement throughout the quarter's course projects. Students can write arbitrary Brewin programs and run them against a canonical Brewin interpreter(historically, Carey's implementation). Barista should provide the correct output in all cases of defined behaviour: in either semantically correct Brewin programs, or in the few well-defined error states. In contrast, undefined behaviour is left open to the implementation (which we often display as a `RuntimeError`).
 
