@@ -11,7 +11,7 @@ This playbook runs through how you should add a new lecture note to the course w
 
 {: .important }
 
-This playbook assumes you've already completed the [Getting Started]({% link getting-started.md %}) guide.
+This playbook assumes you've already completed the [Getting Started]({% link getting-started.md %}) guide, and that the [website has been set up]({% link playbooks/beginning.md %}).
 
 {: .no_toc }
 

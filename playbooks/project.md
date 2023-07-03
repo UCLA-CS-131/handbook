@@ -11,7 +11,7 @@ This playbook runs through everything you need to do to manage a project, from s
 
 {: .important }
 
-This playbook assumes you've already completed the [Getting Started]({% link getting-started.md %}) guide.
+This playbook assumes you've already completed the [Getting Started]({% link getting-started.md %}) guide, and that the [autograder has been set up]({% link playbooks/beginning.md %}).
 
 {: .no_toc }
 

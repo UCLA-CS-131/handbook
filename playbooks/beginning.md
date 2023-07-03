@@ -40,7 +40,7 @@ The course uses a handful of external services, some of which you'll need Carey'
 **We do *not* suggest forking the previous course website directly**. This may seem strange! Quickly, here's why:
 
 1. you will keep an (irrelevant) git history, and may inherit irrelevant files
-2. you won't gain upstream benefits from improvements to [Just the Class](https://github.com/kevinlin1/just-the-class)
+2. you won't gain upstream benefits from improvements to [Just the Class](https://github.com/kevinlin1/just-the-class) (and [Just the Docs](https://just-the-docs.com))
 
 Instead, the suggested general workflow looks like this:
 
@@ -54,7 +54,7 @@ Instead, the suggested general workflow looks like this:
 
 We'll detail that process in the next few subsections.
 
-{:. important }
+{: .important }
 
 You can, of course, just fork the old website and make the changes. But, we really don't recommend this!
 
@@ -322,6 +322,8 @@ Once you commit this file, head to the GitHub Repository. In Settings > Pages > 
 Now, in subsequent pushes to `main`, the site should automatically build and deploy to GitHub Pages; the settings menu we were in above will show you the status of the last build, as well as the URL. Nice!
 
 ## Bootstrapping the First Project
+
+### Prerequisites: Project Spec, Carey's Solution
 
 ### Template Files
 ### Autograder Setup
