@@ -51,7 +51,11 @@ Set the release date to whenever the homework should be visible to students. You
 
 ### Course Website
 
-Update the entry in `homeworks.md` with the correct Gradescope link and due date.
+First, upload a copy of the PDF to the public subset of the Shared Drive. Then, update the entry in `homeworks.md` with:
+
+- the link to the Gradescope assignment
+- the link to the PDF
+- the correct due date
 
 ## Grading the Homework
 

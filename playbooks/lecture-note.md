@@ -93,7 +93,10 @@ To briefly explain this snippet:
 
 ## Writing the Content
 
-The rest of the content for the lesson plan should go *after* the table of contents. Ideally, you should use levels of headings (starting at 2, i.e. `##`) to split up the lecture content.
+The rest of the content for the lesson plan should go *after* the table of contents. A handful of general tips:
+
+- use levels of headings (starting at 2, i.e. `##`) to split up the lecture content
+- we encourage using spacing frequently; nobody loves long paragraphs of text!
 
 {: .note }
 
@@ -287,11 +290,11 @@ $ git commit -m "Adds lecture 1 notes"
 $ git push
 ```
 
-Assuming that there are no merge conflicts, this should immediately be reflected on the website repo's `main` branch. Among other things, it should start a GitHub Actions run called "Deploy Jekyll site to Pages". If this succeeds, then the lecture note has been successfuly published -- you should see the chnages on the course website.
+Assuming that there are no merge conflicts, this should immediately be reflected on the website repo's `main` branch. Among other things, it should start a GitHub Actions run called "Deploy Jekyll site to Pages". If this succeeds, then the lecture note has been successfuly published -- you should see the changes on the course website.
 
 ## Appendix: Advanced Customization
 
-You might find markdown too limiting for ceratin use-cases. That's totally okay! You can extend the existing capability in a few ways; the two easy ways are:
+You might find markdown too limiting for certain use-cases. That's totally okay! You can extend the existing capability in a few ways; the two easy ways are:
 
 1. adding styling via custom CSS
 2. rendering an HTML element(s)
