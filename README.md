@@ -1,21 +1,8 @@
 # CS 131 TA Handbook
 
-This is a TA handbook for UCLA COM SCI 131. The idea is that a new TA could read this website and know how to run the infrastructure for the class.
+This is a TA handbook for ([Carey Nachenberg](http://careynachenberg.weebly.com/)'s) UCLA COM SCI 131. The idea is that a new TA could read this website and know how to run the infrastructure for the class. It features playbooks for all TA responsibilities, provides extra information on various areas of course infrastructure, and links to past TA resources.
 
-For [Carey Nachenberg](http://careynachenberg.weebly.com/)'s offering of the class, it details:
-
-- a set of playbooks for what to do when:
-  - the quarter starts
-  - a new project is created (Gradescope, barista, ...)
-  - a new project is completed (i.e. needs to be graded, solutions published)
-  - a resource needs to be updated on the course site (homework, project spec, lecture slides, exams, schedule)
-- a comprehensive overview of various course infrastructure systems:
-  - the autograder (and Gradescope)
-  - the course website
-  - barista
-  - advanced topics & wish lists for the above
-
-In addition, it links to past resources developed by the TAs.
+For more information, [visit the site itself](https://ucla-cs-131.github.io/handbook/).
 
 ## Licensing and Attribution
 

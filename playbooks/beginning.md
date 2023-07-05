@@ -7,7 +7,7 @@ nav_order: 1
 
 # Beginning of Quarter
 
-This playbook runs through everything you need to do to set up the course infrastructure at the start of the quarter.
+This playbook runs through everything you need to do to set up the course infrastructure at the start of the quarter. It is a long document, **but the goal is not to read through all of this in one sitting - split it up and take breaks!**
 
 {: .important }
 

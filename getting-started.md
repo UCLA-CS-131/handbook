@@ -166,7 +166,7 @@ Enter the folder:
 cd autograder-experimental
 ```
 
-You can now do a variety of actions, including running the autograder locally:
+You can now do a variety of actions. To run the autograder locally (*after* adding your own version of `interpreter*.py` to grade against):
 
 ```sh
 $ python3 tester.py 3 # grading version 3 of the project

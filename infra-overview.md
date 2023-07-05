@@ -33,6 +33,28 @@ The site is automatically updated through [GitHub Actions](https://github.com/fe
 
 ## Autograder
 
+{: .note }
+
+Interested in the security model (and observed issues) with the autograder? See [Advanced: Autograder Security]({% link advanced/autograder-security.md %}).
+
+The course autograder is used for the quarter-long project in the class. Students write an interpreter for "Brewin", a language spec deveoped specifically for the course that requires students to implement various course topics within the interpreter itself. With that in mind, the course autograder has one key goal: given various Brewin programs, count how many are correctly interpreted and executed by a student's interpreter.
+
+The autograder itself is written in dependency-free Python 3. It is a very lightweight wrapper around the student's interpreter, which is also written in Python (and imported as a module). The core flow for one test case is relatively simple:
+
+1. inputs: a Brewin source file, the expected output, whether or not an error is expected, and (optionally) standard input to pass to the interpreter
+2. pass the source file (split into lines, but *not* otherwise parsed) and standard input to the student's interpreter
+3. then, diff the output from the interpreter with the expected output. (this is either the standard out of the interpreter, *or* first error thrown, depending on if an error is expected)
+  - if it matches, grant full score for the test case
+  - if it doesn't match, grant zero points for the test case
+4. if the interpreter does not output after five seconds, terminate the thread and grant zero points
+
+Observe that this model doesn't provide partial credit, requires exact matches (and thus whitespace matters!), and does not take into account performance (other than the timeout). In addition, it is platformless; this specific model doesn't require running on a specific OS, a specific LMS, etc.
+
+The autograder as a whole is given a suite of versioned test cases, and runs each one sequentially. It can be run standalone (as a Python file); we provide students a copy of the exact autograder framework we use (with a subset of test cases) so they can replicate as much of the testing environment locally as possible.
+
+In addition, we've written a small set of helpers that allow this autograder to be deployed to [Gradescope's Autograder platform](https://gradescope-autograders.readthedocs.io/en/latest/). Students will submit their project through the Gradescope UI; Gradescope will then spin up an image, run our autograder, and then report the full score (including a per-test case breakdown) back to students immediately. Students can submit infinitely, which lets them build solutions gradually over time.
+
+The autograder has been a large success, though it also has limitations. For a more in-depth discussion, see [Advanced: Philosophy]({% link advanced/philosophy.md %}), the [running to-dos list]({% link advanced/todos.md %}), and [Advanced: Autograder Security]({% link advanced/autograder-security.md %}).
 
 ## Barista
 
