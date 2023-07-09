@@ -276,7 +276,6 @@ $ npm run start-api
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on http://127.0.0.1:8000
 Press CTRL+C to quit
-
 ```
 
 This opens the Flask server at [http://127.0.0.1:8000](http://127.0.0.1:8000); you can ping it locally without the frontend.
@@ -300,7 +299,6 @@ To create a production build, use npm run build.
 
 webpack compiled successfully
 No issues found.
-
 ```
 
 This should automatically open the React app at [http://localhost:3000](http://localhost:3000).

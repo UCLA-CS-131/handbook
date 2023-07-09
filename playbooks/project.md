@@ -153,7 +153,7 @@ $ git push
 
 First, we'll make two tiny code adjustments. In the `Makefile`, add a line for your version; you can copy the one below, and change the three `v3`s:
 
-```Makefile
+```
 v3: clean run_autograder setup.sh tester.py harness.py bparser.py intbase.py v3
 	zip -r grader.zip run_autograder setup.sh tester.py harness.py bparser.py intbase.py v3
 ```
@@ -194,9 +194,113 @@ This section assumes that you have some sort of working solution for the *previo
 
 ### Updating the Project Starter
 
+The project starter is what we give students to bootstrap each project. The contents of the project starter are:
+
+- always: evergreen project infrastructure, which usually includes:
+  - `intbase.py`: a file that defines the ABC that students subclass, as well as enums and constants for various parts of the program
+  - `bparser.py`: a file that parses programs for students. We first introduced this in S2023.
+- after Project 1: a solution to the *previous* project, which includes:
+  - an `interpreterv*.py`: the entrypoint for the interpreter
+  - any supporting files the interpreter imports (e.g. `env_v2.py`)
+
+To update the starter,
+
+1. review the previous project solution *prior* to publishing. This should involve:
+  - using a code formatter like [black](https://pypi.org/project/black/) to enforce a consistent code style across all the files
+  - resolving open lints (by either fixing or ignoring the problem) using [pylint](https://pypi.org/project/pylint/)
+  - checking for any typos + unused methods/classes/files
+  - a good heuristic for knowing when you're done: if running black + pylint produces no errors (this is easy to do with the VSCode extensions!)
+2. verify that the provided solution *passes all of the test cases* for the previous project.
+3. commit any updates to the evergreen project infrastructure. Since these changes are uncommon, include a commit message that explains what happened!
+4. commit the new solution to the previous project. In particular, **this commit should not overwrite any existing files**; it should only create new ones!
+5. push all the relevant changes and create a new release on GitHub, tagging the `main` branch
+
+Great! You're now ready to update the public autograder.
+
 ### Updating the Public Autograder
 
+The public autograder is a functionally equivalent subset of the autograder we use, except:
+
+- it doesn't have all of the test cases
+- it doesn't include irrelevant items for students, i.e. the Gradescope update packager
+
+To update the public autograder,
+
+1. migrate any updates made to the project infrastructure in [Updating the Project Starter](#updating-the-project-starter); make a commit with a descriptive message
+2. then, repeat the steps in [Autograder Setup (code and files)](#autograder-setup-code-and-files) in the local autograder
+3. register the public test cases you'd like students to see, using the steps in [Autograder Setup (code and files)](#autograder-setup-code-and-files); make a commit with a descriptive message
+  - usually, we add between 10%-20% of the private test cases; keep the names the same!
+  - good candidates include test cases already listed in the spec
+4. verify that the provided solution *passes all of the test cases* for the current project (but **do not commit it**)
+5. update the `README` for the repository; make a commit with a descriptive message
+6. push all the relevant changes and create a new release on GitHub, tagging the `main` branch
+
+If you need to deviate from these instructions, it likely means that something is wrong with the private autograder; make sure to keep those in sync!
+
 ### Deploying to Barista
+
+{: .note }
+
+It's up to the TAs to figure out how to version-control barista without publically publishing the solution to the project. We'll assume that you're keeping a private repository.
+
+Now, we'll deploy a working interpreter for the current project to barista, so students can verify that their test cases are well-formed.
+
+To update barista,
+
+1. (if not already): run through [Getting Started: Barista]({% link getting-started.md %}#setup-barista), which includes getting access to the [Fly](https://fly.io) instance
+2. add a working solution. In `interpreters/YOUR_QUARTER`,
+    - copy in the `interpreterv*.py` and imported files from the current project solution
+    - **important**: change all relative imports (in all new files) to specify the current directory.
+        - `import classv3` should become `from . import classv3`
+        - `from classv3 import ClassDef` should become `from .classv3 import ClassDef`
+        - **Your code will not work without this!**
+3. add a new *executor*, which will run the project solution in the backend. In `interpreters/YOUR_QUARTER/executor.py`, import the new `interpreterv*.py`, and add a `case` statement that sets `interpreter` to it. (example below)
+4. register the new version in the frontend. In `src/constants/YOUR_QUARTER.ts`, add a new object to the `export const YOUR_QUARTER_VERSIONS` array. (example below)
+  - `version` should match the value in the `run` function you made earlier
+  - `quarter` should match the values for previous versions/your quarter
+  - `title` is what's rendered in the language selection dropdown
+  - `defaultProgram` is the first program loaded if the language is the default language. Pick a concise example from the public test cases. Use backticks to create multi-line strings.
+  - optional: `highlighter`; see [Deep Dive: Barista]({% link advanced/barista.md %}) for more information.
+5. change the `DEFAULT_VERSION` in `src/constants/index.ts` to be the index of the new object you added in step 4.
+6. test your change locally first! Using the instructions in [Getting Started: Barista]({% link getting-started.md %}#setup-barista), serve a local copy of both the backend and frontend. Verify that the "run!" button does what's intended!
+7. once you've verified this works, deploy a new copy with `fly deploy` (and/or committing to your private repository)
+8. verify that the newly-deployed app works *online* (i.e. at the `fly.dev` domain)
+
+Phew! That was a lot, but now all the course infrastructure is ready for students to work on. Great job!
+
+```py
+# executor from step 3
+from . import interpreterv1
+from . import interpreterv2
+from . import interpreterv3
+
+def run(version, raw_program, stdin=None):
+    match version:
+        case "1":
+            interpreter = interpreterv1
+        case "2":
+            interpreter = interpreterv2
+        case "3":
+            interpreter = interpreterv3
+        case _:
+            raise ValueError("Invalid version; expected one of {1,2,3}")
+```
+
+```js
+// version from step 4
+export const S23_VERSIONS = [
+  // ...
+  {
+    version: "3",
+    quarter: "s23",
+    title: "brewin##",
+    defaultProgram: "print('hello world')",
+  },
+];
+```
+
+
+Commit [`debe7e7`](https://github.com/UCLA-CS-131/barista/commit/debe7e7d55778c1fa1979bf5ba6106059c1f0d7c#diff-a7d5c79d9bfe2064aa48a56bc7a3ba38ebe5c0dc8482a686122b75f73ca7b4d6) is a worked example of the above steps for P2/P3 in S2023.
 
 ### Release Spec & Gradescope
 
@@ -214,6 +318,8 @@ Project 3 has been released! It is due at **11:59 PM PT on June 4th**. Some link
 - [Barista](https://barista.fly.dev/)
 ```
 
+If you haven't already, make the assignment public on Gradescope.
+
 Once this is done, you're good to send an email out to students! Great job!
 
 ## Mid-Project Maintenance
@@ -223,7 +329,7 @@ Once this is done, you're good to send an email out to students! Great job!
 Updating the private autograder is simple:
 
 1. make the necessary changes
-2. run `make v*` (e.g. `make v3`)
+2. run `make v*` (e.g. `make v3`) to generate a `grader.zip`
 3. on Gradescope, [replace the current autograder](https://gradescope-autograders.readthedocs.io/en/latest/getting_started/)
 4. optionally; re-run all students' submissions (this is a good idea if a test case is bugged)
 
