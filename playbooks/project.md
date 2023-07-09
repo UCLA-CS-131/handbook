@@ -158,6 +158,10 @@ v3: clean run_autograder setup.sh tester.py harness.py bparser.py intbase.py v3
 	zip -r grader.zip run_autograder setup.sh tester.py harness.py bparser.py intbase.py v3
 ```
 
+{: .note }
+
+There's a circular dependency since `v3` is both a task and a folder. Matt never got around to resolving this, but it's a very short fix!
+
 Next, in `run_autograder`, change the version of the `python3` command to match what you're deploying!
 
 ```sh
@@ -350,9 +354,11 @@ Students may want to activate an earlier submission to be their "final grade"; t
 
 ## Releasing Grades
 
-{: .note }
+There are three items to do:
 
-Looking to release solutions? This is normally done through [Updating the Project Starter](#updating-the-project-starter)!
+1. Release solutions to the project: do this by [Updating the Project Starter](#updating-the-project-starter)
+2. Release the private test cases: do this by adding them to the [Public Autograder](#updating-the-public-autograder) (i.e. copy over the new test cases to `tests/` and `fails/`, and register them in `tester.py`)
+3. Release the actual grades through Gradescope
 
 Releasing grades is less important for the project, since students already know their grade. However, to see the final breakdown (as well as summary statistics like the mean and median), you need to hit "Publish Grades" in the "Review Grades" section of the assignment on Gradescope. Optionally, you can send students an email letting them know that their grades are in.
 
