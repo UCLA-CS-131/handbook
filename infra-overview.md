@@ -37,7 +37,7 @@ The site is automatically updated through [GitHub Actions](https://github.com/fe
 
 Interested in the security model (and observed issues) with the autograder? See [Advanced: Autograder Security]({% link advanced/autograder-security.md %}).
 
-The course autograder is used for the quarter-long project in the class. Students write an interpreter for "Brewin", a language spec deveoped specifically for the course that requires students to implement various course topics within the interpreter itself. With that in mind, the course autograder has one key goal: given various Brewin programs, count how many are correctly interpreted and executed by a student's interpreter.
+The course autograder is used for the quarter-long project in the class. Students write an interpreter for "Brewin", a language spec developed specifically for the course that requires students to implement various course topics within the interpreter itself. With that in mind, the course autograder has one key goal: given various Brewin programs, count how many are correctly interpreted and executed by a student's interpreter.
 
 The autograder itself is written in dependency-free Python 3. It is a very lightweight wrapper around the student's interpreter, which is also written in Python (and imported as a module). The core flow for one test case is relatively simple:
 
