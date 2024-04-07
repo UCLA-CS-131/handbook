@@ -512,6 +512,8 @@ First, we'll update the backend to handle the new version. The steps are as foll
   - **important**: change all relative imports (in all new files) to specify the current directory.
     - `import classv3` should become `from . import classv3`
     - `from classv3 import ClassDef` should become `from .classv3 import ClassDef`
+    - Note from Bonnie: Beginning fall 2023 quarter, some solutions may involve nested folders. I couldn't figure out how to import files from nested folders, so I simply unnested all the files and changed the imports accordingly.
+
     - **Your code will not work without this!**
 3. add an executor. Create `interpreters/YOUR_QUARTER/executor.py` with the code block below.
 4. finally, add a Flask endpoint for the API. Edit `app.py` to include the function with the code block below.
