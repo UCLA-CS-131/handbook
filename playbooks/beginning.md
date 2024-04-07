@@ -375,10 +375,7 @@ To set up the private autograder,
 4. replace the `intbase.py` and `bparser.py` with the new versions in this quarter
   - if this quarter does not have a parser, remove `bparser.py` entirely
 5. replace the tests in `v1/tests` with equivalent valid ones for project 1
-  - `v1/tests/test_print_string` is intended to be a trivially-passing program
-  - `v1/fails/test_if` is intended to be a trivially-failing program
-  - the `.brewin` files are intended to be source code; replace these with valid P1 source code
-  - the `.exp` files are intended to be the output of the interpreter; replace these with valid P1 outputs for the source files
+  - the input and expected output of each test case can be found as a comment at the bottom of each test case file
 
 At this point, the autograder *should* be fully functioning. Test it by:
 
